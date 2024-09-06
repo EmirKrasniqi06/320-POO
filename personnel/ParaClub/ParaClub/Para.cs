@@ -52,7 +52,7 @@ namespace ParaClub
         /// <summary>
         /// Mouvement du parachutiste et utilisation du parachute après avoir dépassé la moitié de l'hauteur de la console
         /// </summary>
-        internal void Fallparachutist()
+        internal void FallParachutist()
         {
             if (altitude > Config.SCREEN_HEIGHT) // le parachutiste est en air
             {
@@ -79,7 +79,7 @@ namespace ParaClub
             string[] view = parachuteIsOpen ? viewWithParachute : viewNoParachute; // Si le paracute est ouvert afficher le parachutiste avec le parachute sinon sans
             for (int i = 0; i < view.Length; i++)
             {
-                // Afficher le parachutiste au milieu de l'avion et en bas (hauteur de la console - l'hauteur de l'espace en dessous de l'avion +i)
+                // Afficher le parachutiste au milieu de l'avion et en bas (hauteur de la console - l'hauteur de l'espace en dessous de l'avion +i pour réussir à dessiner toutes les lignes du parachutiste)
                 Console.SetCursorPosition(x + 15, Config.SCREEN_HEIGHT - this.altitude + i);
                 Console.WriteLine(view[i]);
             }

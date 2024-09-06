@@ -26,6 +26,7 @@ namespace ParaClub
         // Attributs de l'avion
         public int x; // positionnement horizontale 
         public int altitude; // Hauteur
+        public List<ParaClass> parachutists;
 
         /// <summary>
         /// Constructeur
@@ -34,6 +35,7 @@ namespace ParaClub
         {
             x = 0;
             altitude = Config.SCREEN_HEIGHT;
+            parachutists = new List<ParaClass>();
         }
         /// <summary>
         /// Affichage de chaque ligne de la table où se trouve l'avion
@@ -59,6 +61,22 @@ namespace ParaClub
             {
                 x++; // Sinon bouger à droite
             }
+        }
+        /// <summary>
+        /// Embarquer un parachutiste dans l'avion
+        /// </summary>
+        /// <param name="para"></param>
+        public void Board (ParaClass para)
+        {
+            this.parachutists.Add(para); // Ajouter un parachutiste à la liste
+        }
+        internal ParaClass DropParachutist()
+        {
+            ParaClass parachutist = parachutists.First(); // Récupère le premier parachutiste de la liste
+            parachutists.Remove(parachutist); // Le supprime car il s'est lancé
+            parachutist.x = x; // Reinitialiser la position horizontale avec celle de l'avion
+            parachutist.altitude = this.altitude; // Reinitialiser l'hauteur
+            return parachutist;
         }
     }
 
