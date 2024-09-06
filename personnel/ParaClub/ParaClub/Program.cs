@@ -18,9 +18,7 @@ namespace ParaClub
             while (true)
             {
                 plane.PlaneMovement();
-                
 
-                // Modifier ce que l'on *voit*
                 Console.Clear();
                 plane.PlaneDisplay();
 
