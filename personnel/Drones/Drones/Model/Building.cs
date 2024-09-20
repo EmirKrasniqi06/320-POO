@@ -23,7 +23,7 @@ namespace Drones
         {
             _width = width;
             _depth = depth;
-            _buidlingColor = new Pen(new SolidBrush(_buidlingColor), 3);
+            _buildingBrush = new Pen(new SolidBrush(_buidlingColor), 3);
         }
         public Color BuildingColor
         {
