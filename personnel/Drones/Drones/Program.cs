@@ -19,13 +19,25 @@ namespace Drones
             fleet.Add(new Drone(AirSpace.WIDTH/2, AirSpace.HEIGHT/2, "Emir"));
 
             // Création batîments
-            List<Building> building = new List<Building>();
-            building.Add(new Factory());
-            building.Add(new Store());
 
-
-            // Démarrage
-            Application.Run(new AirSpace(fleet));
+            List<Building> buildings = new List<Building>();
+            for (int i=0; i<5; i++)
+            {
+                Building building = new Building(50,50);
+                buildings.Add(new Factory(30,30));
+                buildings.Add(new Store(15,15));
+            }
+           try
+            {
+                // Démarrage
+                Application.Run(new AirSpace(fleet, buildings));
+            }
+            catch (Exception e)
+            {
+                Console.WriteLine(e.Message);
+            }
+            
+            
         }
     }
 }
