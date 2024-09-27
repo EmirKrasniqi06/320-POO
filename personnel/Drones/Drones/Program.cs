@@ -15,8 +15,12 @@ namespace Drones
             ApplicationConfiguration.Initialize();
 
             // Création de la flotte de drones
-            List<Drone> fleet= new List<Drone>();
-            fleet.Add(new Drone(AirSpace.WIDTH/2, AirSpace.HEIGHT/2, "Emir"));
+            List<Drone> fleet = new List<Drone>();
+            for (int i = 0; i < 1; i++)
+            {
+                Drone drone = new Drone(AirSpace.WIDTH / 2, AirSpace.HEIGHT / 2, "Emir");
+                fleet.Add(drone);
+            }
 
             // Création batîments
 
@@ -27,17 +31,20 @@ namespace Drones
                 buildings.Add(new Factory(30,30));
                 buildings.Add(new Store(15,15));
             }
-           try
+
+            // Démarrage
+            try
             {
-                // Démarrage
                 Application.Run(new AirSpace(fleet, buildings));
             }
             catch (Exception e)
             {
                 Console.WriteLine(e.Message);
+                // Console.WriteLine(e.ToString());
+                Console.ReadKey();
             }
-            
-            
+
+
         }
     }
 }
