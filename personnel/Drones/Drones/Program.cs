@@ -18,12 +18,11 @@ namespace Drones
             List<Drone> fleet = new List<Drone>();
             for (int i = 0; i < 1; i++)
             {
-                Drone drone = new Drone(AirSpace.WIDTH / 2, AirSpace.HEIGHT / 2, "Emir");
+                Drone drone = new Drone(500, 500, "Emir");
                 fleet.Add(drone);
             }
 
             // Création batîments
-
             List<Building> buildings = new List<Building>();
             for (int i=0; i<5; i++)
             {

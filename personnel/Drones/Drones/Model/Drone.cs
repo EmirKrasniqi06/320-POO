@@ -1,7 +1,8 @@
-﻿namespace Drones
+﻿
+namespace Drones
 {
     // Cette partie de la classe Drone définit ce qu'est un drone par un modèle numérique
-    public partial class Drone
+    public partial class Drone : IExpellable
     {
         Random alea = new Random();
 
@@ -20,6 +21,22 @@
             _y = y;
             _name = name;
         }
+
+        public bool Evacuate(Rectangle zone)
+        {
+            throw new NotImplementedException();
+        }
+
+        public void FreeFlight()
+        {
+            throw new NotImplementedException();
+        }
+
+        public EvacuationState GetEvacuationState()
+        {
+            throw new NotImplementedException();
+        }
+
         public void Update(int interval)
         {
             _x += 2;                                    // Il s'est déplacé de 2 pixels vers la droite
