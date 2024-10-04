@@ -1,3 +1,6 @@
+using Drones;
+using System.Reflection;
+
 namespace Drones
 {
     // La classe AirSpace représente le territoire au dessus duquel les drones peuvent voler
@@ -11,7 +14,11 @@ namespace Drones
 
         // La flotte est l'ensemble des drones qui évoluent dans notre espace aérien
         private List<Drone> fleet;
+        // L'ensemble de batîments
         private List<Building> buildings;
+
+        public static Dispatch dispatch = new Dispatch();
+        
 
         BufferedGraphicsContext currentContext;
         BufferedGraphics airspace;
@@ -69,6 +76,15 @@ namespace Drones
             {
                 drone.Update(interval);
             }
+            foreach (Building building in buildings)
+            {
+                if (building.GetType() == typeof(Factory))
+                {
+                    Factory factory = (Factory)building;
+                    factory.Update(interval);
+                }
+            }
+
         }
 
         // Méthode appelée à chaque frame
