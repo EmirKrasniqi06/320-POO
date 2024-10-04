@@ -24,12 +24,14 @@ namespace Drones
                 // Carton produit
                 Box box = new Box();
                 Console.WriteLine("1 Box of Smarties has been created !");
+
                 // Carton prêt pour être livré
                 AirSpace.dispatch.AddBox(box);
-                // Carton livré
-                AirSpace.dispatch.RetiredBox(box);
-                productionTimer = 0;
 
+                // Carton livré
+                AirSpace.dispatch.RetireBox(box);
+
+                productionTimer = 0;
             }
         }
     }

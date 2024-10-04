@@ -31,5 +31,25 @@ namespace TestDroneProject
             // Assert
             Assert.AreEqual(EvacuationState.Free, drone.GetEvacuationState());
         }
+
+        [TestMethod]
+        public void Test_AddBox_RetireBox ()
+        {
+            // Arrange
+            Box box = new Box();
+            Dispatch dispatch = new Dispatch();
+
+            // Act for AddBox
+            dispatch.AddBox(box);
+
+            // Assert for AddBox
+            Assert.AreEqual(1, dispatch.boxesToDispatch.Count);
+
+            // Act for RetireBox
+            dispatch.RetireBox(box);
+
+            // Assert for RetireBox
+            Assert.AreEqual(0, dispatch.boxesToDispatch.Count);
+        }
     }
 }

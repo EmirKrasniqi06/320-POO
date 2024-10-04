@@ -15,7 +15,7 @@ namespace Drones
             boxesToDispatch.Add(box);
             Console.WriteLine("The box is ready to dispatch !");
         }
-        public void RetiredBox(Box box)
+        public void RetireBox(Box box)
         {
             boxesToDispatch.Remove(box);
             Console.WriteLine("The box has been dispatched !");                
