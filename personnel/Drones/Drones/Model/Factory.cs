@@ -24,6 +24,9 @@ namespace Drones
                 // Carton produit
                 Box box = new Box();
                 Console.WriteLine("1 Box of Smarties has been created !");
+                Console.WriteLine("ID : " + box.id);
+                Console.WriteLine("Weight : " + box.weight + " Kg");
+                Console.WriteLine("Color : " + box.color);
 
                 // Carton prêt pour être livré
                 AirSpace.dispatch.AddBox(box);
