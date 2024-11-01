@@ -8,8 +8,8 @@ namespace BoatExercise
 {
     public partial class Container
     {
-        private int _id;
-        private int _weight;
+        public int _id;
+        public int _weight;
         public Container(int id, int weight)
         {
             _id = id;
